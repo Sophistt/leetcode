@@ -27,18 +27,20 @@ import java.util.List;
 
 public class Solution_56 {
     public int[][] merge(int[][] intervals) {
+        if (intervals == null || intervals.length == 0) return new int[0][];
         // 使用左端点进行排序
-        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
 
         // 创建一个新的 res 数组，里面插入结果
         List<int[]> res = new ArrayList<int[]>();
         res.add(intervals[0]);
-        for(int [] num : intervals){
+
+        for(int [] current : intervals){
             int [] end = res.get(res.size() - 1);
-            if (num[0] > end[1]) {
-                res.add(num);
+            if (current[0] > end[1]) {
+                res.add(current);
             } else {
-                end[1] = Math.max(end[1], num[1]);
+                end[1] = Math.max(end[1], current[1]);
             }
         }
         return res.toArray(new int[res.size()][]);
