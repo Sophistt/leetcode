@@ -1,4 +1,4 @@
-package doublePtrs;
+package leetcode.doubleptrs;
 
 import java.util.Arrays;
 

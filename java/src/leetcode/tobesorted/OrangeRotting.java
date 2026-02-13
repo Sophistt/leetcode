@@ -1,6 +1,5 @@
-package leetcode;
+package leetcode.tobesorted;
 
-import java.util.List;
 import java.util.Queue;
 import java.util.LinkedList;
 
