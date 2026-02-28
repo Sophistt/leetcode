@@ -21,7 +21,6 @@ class QSort:
         j = high
         while i < j: # 双指针法
             while i < j and arr[j] >= pivot: j-=1
-            while i < j and arr[i] <= pivot: i+=1
             if i < j:
                 arr[i], arr[j] = arr[j], arr[i]
         arr[low], arr[i] = arr[i], arr[low]
